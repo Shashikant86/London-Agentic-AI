@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """
+Author: Shashi Jagtap (converted original notebook to Python script) 
 DSPy Evaluator-Optimizer Tutorial: Joke-Telling AI with GEPA (Ollama Version)
 
 This script demonstrates the evaluator-optimizer pattern in DSPy, building a joke-telling AI
@@ -24,25 +25,37 @@ Original notebook: evaluator-optimizer-in-dspy.ipynb
 import dspy
 import os
 import random
+import argparse
 from dotenv import load_dotenv
 
-def setup_environment():
-    """Setup DSPy environment and language models using Ollama"""
+def setup_environment(student_model="ollama_chat/llama3.2:1b", teacher_model="ollama_chat/llama3.1:8b"):
+    """Setup DSPy environment and language models using Ollama
+    
+    Args:
+        student_model (str): Model for the student LM (default: llama3.2:1b)
+        teacher_model (str): Model for the teacher LM (default: llama3.1:8b)
+    """
     # Load environment variables from .env file (optional for Ollama)
     load_dotenv()
     
+    # Disable caching to avoid database file issues
+    import dspy
+    dspy.settings.configure(cache=False)
+    
+    print(f"Using student model: {student_model}")
+    print(f"Using teacher model: {teacher_model}")
+    
     # Initialize Ollama language model for student (main model)
     student_lm = dspy.LM(
-        model="ollama_chat/llama3.2:1b",
+        model=student_model,
         api_key="",  # Ollama doesn't require API key
         max_tokens=4000,
         temperature=1.0
     )
     
     # Initialize teacher model for optimization (can use same or different model)
-    # For better optimization, you could use a larger model like llama3.1:70b if available
     teacher_lm = dspy.LM(
-        model="ollama_chat/llama3.1:8b",
+        model=teacher_model,
         api_key="",  # Ollama doesn't require API key
         temperature=1.0,
         max_tokens=4000
@@ -253,7 +266,7 @@ def optimize_with_gepa(program, trainset, valset, metric, teacher_lm, max_evals=
     optimizer = dspy.GEPA(
         metric=metric,
         max_full_evals=max_evals,
-        num_threads=16,
+        num_threads=1,  # Reduced from 16 to avoid file descriptor limits
         track_stats=True,
         use_merge=False,
         reflection_lm=teacher_lm,
@@ -288,15 +301,22 @@ def export_optimized_prompt(optimized_comedian):
     print(prompt[0]["content"])
     return prompt
 
-def main():
-    """Main execution function demonstrating the evaluator-optimizer pattern"""
+def main(student_model="ollama_chat/llama3.2:1b", teacher_model="ollama_chat/llama3.1:8b"):
+    """Main execution function demonstrating the evaluator-optimizer pattern
+    
+    Args:
+        student_model (str): Model for the student LM
+        teacher_model (str): Model for the teacher LM  
+    """
     print("=== DSPy Evaluator-Optimizer Tutorial (Ollama Version) ===")
     print("Building a joke-telling AI with GEPA optimization using local models\n")
     
     # Setup environment
     print("1. Setting up Ollama environment...")
-    print("   Make sure Ollama is running and llama3.1:8b is pulled")
-    student_lm, teacher_lm = setup_environment()
+    print(f"   Using student model: {student_model}")
+    print(f"   Using teacher model: {teacher_model}")
+    print("   Make sure Ollama is running and models are pulled")
+    student_lm, teacher_lm = setup_environment(student_model, teacher_model)
     
     # Test language model
     test_response = student_lm("Hello")
@@ -328,7 +348,7 @@ def main():
     evaluate_audience = dspy.Evaluate(
         metric=exact_match,
         devset=devset,
-        num_threads=16,
+        num_threads=1,  # Reduced from 16 to avoid file descriptor limits
         display_progress=True,
         display_table=5
     )
@@ -347,12 +367,18 @@ def main():
     
     # Optimize audience judge with GEPA
     print("7. Optimizing audience judge with GEPA...")
-    optimized_audience = optimize_with_gepa(
-        fewshot_audience, trainset, valset, exact_match, teacher_lm
-    )
-    
-    opt_audience_score = evaluate_audience(optimized_audience)
-    print(f"Optimized audience accuracy: {opt_audience_score}%\n")
+    try:
+        optimized_audience = optimize_with_gepa(
+            fewshot_audience, trainset, valset, exact_match, teacher_lm
+        )
+        
+        opt_audience_score = evaluate_audience(optimized_audience)
+        print(f"Optimized audience accuracy: {opt_audience_score}%\n")
+    except Exception as e:
+        print(f"Error during audience optimization: {e}")
+        print("Using fewshot audience instead of optimized version\n")
+        optimized_audience = fewshot_audience
+        opt_audience_score = fewshot_score
     
     # Create LLM-as-a-Judge metric for comedian evaluation
     print("8. Creating LLM-as-a-Judge metric...")
@@ -372,7 +398,7 @@ def main():
     evaluate_comedian = dspy.Evaluate(
         metric=audience_metric,
         devset=comedian_devset,
-        num_threads=16,
+        num_threads=1,  # Reduced from 16 to avoid file descriptor limits
         display_progress=True,
         display_table=5
     )
@@ -390,12 +416,18 @@ def main():
     
     # Optimize comedian with GEPA
     print("11. Optimizing comedian with GEPA...")
-    optimized_comedian = optimize_with_gepa(
-        fewshot_comedian, trainset, valset, audience_metric, teacher_lm
-    )
-    
-    opt_comedian_score = evaluate_comedian(optimized_comedian)
-    print(f"Optimized comedian accuracy: {opt_comedian_score}%\n")
+    try:
+        optimized_comedian = optimize_with_gepa(
+            fewshot_comedian, trainset, valset, audience_metric, teacher_lm
+        )
+        
+        opt_comedian_score = evaluate_comedian(optimized_comedian)
+        print(f"Optimized comedian accuracy: {opt_comedian_score}%\n")
+    except Exception as e:
+        print(f"Error during comedian optimization: {e}")
+        print("Using fewshot comedian instead of optimized version\n")
+        optimized_comedian = fewshot_comedian
+        opt_comedian_score = fewshot_comedian_score
     
     # Test optimized comedian
     print("12. Testing optimized comedian...")
@@ -424,7 +456,73 @@ def main():
         }
     }
 
+def parse_args():
+    """Parse command line arguments for model configuration"""
+    parser = argparse.ArgumentParser(
+        description="DSPy GEPA Demo with Local Ollama Models",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""Examples:
+  # Default models (recommended for most systems)
+  python evaluator_optimizer_dspy.py
+  
+  # Larger models for better performance (requires more RAM)
+  python evaluator_optimizer_dspy.py --student llama3.1:8b --teacher qwen3:8b
+  
+  # High-performance models (requires 64GB+ RAM)
+  python evaluator_optimizer_dspy.py --student gpt-oss:20b --teacher gpt-oss:120b
+        """
+    )
+    
+    parser.add_argument(
+        "--student", 
+        default="llama3.2:1b",
+        help="Student model name (default: llama3.2:1b)"
+    )
+    
+    parser.add_argument(
+        "--teacher", 
+        default="llama3.1:8b",
+        help="Teacher model name (default: llama3.1:8b)"
+    )
+    
+    parser.add_argument(
+        "--list-models",
+        action="store_true",
+        help="List available Ollama models and exit"
+    )
+    
+    return parser.parse_args()
+
+def list_available_models():
+    """List available Ollama models"""
+    try:
+        import subprocess
+        result = subprocess.run(["ollama", "list"], capture_output=True, text=True, check=True)
+        print("Available Ollama models:")
+        print(result.stdout)
+    except subprocess.CalledProcessError:
+        print("Error: Could not list Ollama models. Make sure Ollama is installed and running.")
+    except FileNotFoundError:
+        print("Error: Ollama not found. Please install Ollama first.")
+
 if __name__ == "__main__":
+    # Parse command line arguments
+    args = parse_args()
+    
+    # List models if requested
+    if args.list_models:
+        list_available_models()
+        exit(0)
+    
+    # Prepare model names with ollama_chat prefix
+    student_model = f"ollama_chat/{args.student}"
+    teacher_model = f"ollama_chat/{args.teacher}"
+    
+    print(f"Starting DSPy GEPA Demo...")
+    print(f"Student model: {args.student}")
+    print(f"Teacher model: {args.teacher}")
+    print()
+    
     # Install required packages (uncomment if needed)
     # import subprocess
     # subprocess.run(["pip", "install", "dspy", "python-dotenv", "pandas"], check=True)
@@ -432,12 +530,22 @@ if __name__ == "__main__":
     import asyncio
     
     try:
-        results = main()
+        results = main(student_model, teacher_model)
     finally:
         # Clean up any remaining event loops to prevent warnings
         try:
-            loop = asyncio.get_event_loop()
-            if loop.is_running():
-                loop.close()
-        except RuntimeError:
+            import asyncio
+            try:
+                loop = asyncio.get_running_loop()
+                if not loop.is_closed():
+                    loop.close()
+            except RuntimeError:
+                # No running loop, try to get current one
+                try:
+                    loop = asyncio.get_event_loop()
+                    if not loop.is_closed():
+                        loop.close()
+                except RuntimeError:
+                    pass
+        except Exception:
             pass

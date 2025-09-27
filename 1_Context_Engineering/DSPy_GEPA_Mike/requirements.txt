@@ -1,0 +1,16 @@
+# DSPy GEPA Demo Dependencies (Ollama Version)
+# Core DSPy framework for building and optimizing language model programs
+dspy
+
+# Environment variable management (optional for Ollama)
+python-dotenv
+
+# Data manipulation and analysis
+pandas
+
+# Optional: Jupyter for running the notebook
+jupyter
+ipykernel
+
+# Optional: Enhanced development experience
+rich

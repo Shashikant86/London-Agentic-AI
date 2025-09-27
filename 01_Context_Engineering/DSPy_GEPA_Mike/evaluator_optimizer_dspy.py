@@ -242,7 +242,7 @@ def create_audience_metric(optimized_audience):
     """Create LLM-as-a-Judge metric for evaluating jokes"""
     def audience_metric(gold: dspy.Example, pred: dspy.Prediction, trace=None, pred_name=None, pred_trace=None):
         """Check if the joke is funny or not using the llm-as-a-judge technique"""
-        response = optimized_audience(topic=gold.topic, comedian=gold.comedian, joke=pred.joke)
+        response = optimized_audience(topic=gold.topic, joke=pred.joke)
         # Return feedback for the GEPA optimizer
         return dspy.Prediction(score=response.funny, feedback=response.reasoning)
     
@@ -429,4 +429,15 @@ if __name__ == "__main__":
     # import subprocess
     # subprocess.run(["pip", "install", "dspy", "python-dotenv", "pandas"], check=True)
     
-    results = main()
+    import asyncio
+    
+    try:
+        results = main()
+    finally:
+        # Clean up any remaining event loops to prevent warnings
+        try:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                loop.close()
+        except RuntimeError:
+            pass

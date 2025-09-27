@@ -9,13 +9,13 @@
 This demo teaches the **evaluator-optimizer pattern** in DSPy by building a joke-telling AI system that demonstrates how to create, evaluate, and optimize AI programs systematically. The example shows how to build a comedian AI that generates jokes in specific comedian styles and uses an AI judge to evaluate and improve joke quality through evolutionary optimization.
 
 
-## What's Inside 
+## Whats inside 
 
-This directory contains the original notebook from Mike as well as a rewritten version for developers who want to try the Python script directly. 
+This directory has the original notebook from the Mike as well as re-writen version for the developers who want to try the Python script directly. 
 
 - `evaluator-optimizer-in-dspy.ipynb` - Original Jupyter notebook with full demonstration (From Mike Taylor)
 - `evaluator_optimizer_dspy.py` - Converted Python script by Shashi  (runnable version for developers locally)
-- `requirements.txt` - Project dependencies that can be installed via pip or uv 
+- `requirement.txt` - Project dependencies can be installed via pip or uv 
 
 
 ## What You'll Learn
@@ -36,20 +36,11 @@ This directory contains the original notebook from Mike as well as a rewritten v
 - **Performance Evaluation**: Measuring and comparing system improvements
 
 
-
-## Prerequisites
-
-### Dependencies (For Local Ollama Run) 
-
-```bash
-pip install -r requirements.txt
-```
-
 ### Environment Setup
 
 #### Option 1: OpenAI (Original Notebook by Mike)
 
-Create a `.env` file in this directory with the following content. **IMPORTANT**: Keep the `.env` file safe and do not commit this file to version control.
+Create a `.env` file in this directory with: KEEP `.env` file safe and do not commit this file
 
 ```env
 OPENAI_API_KEY=your_openai_api_key_here
@@ -59,33 +50,20 @@ OPENAI_API_KEY=your_openai_api_key_here
 
 **🏠 Local Version Available**: The Python script uses **Ollama** for completely local inference - no API keys or internet required!
 
-1. **Install Ollama**:
-   ```bash
-   # On macOS
-   brew install ollama
-   
-   # On Linux
-   curl -fsSL https://ollama.ai/install.sh | sh
-   
-   # Or download from: https://ollama.ai/download
-   ```
+2. **Install Ollama & Pull required models**:
 
-2. **Pull required models**:
+Install [Ollama](https://ollama.com) and get some models locally. This is an example but you need advanced model for optimization
    ```bash
    ollama pull llama3.2:1b        # Lightweight model
    # or
    ollama pull llama3.1:8b        # Standard model (needs more RAM)
    ```
 
-3. **Start Ollama service** (if not auto-started):
-   ```bash
-   ollama serve
-   ```
+Create virtualenv and install dependencies. 
 
-
-
-### System Requirements
-
+```bash
+pip install -r requirements.txt
+```
 
 
 #### For OpenAI (Original & Recommended)
@@ -111,11 +89,11 @@ python evaluator_optimizer_dspy.py  # Full GEPA optimization experience
 ### ⚠️ **Performance Warnings**
 - **RAM Requirements**: Minimum 16GB RAM recommended
 - **Optimization Warning**: GEPA optimization is computationally intensive and may take significant time on slower machines
-- **Low RAM Warning**: Do not run full optimization on machines with less than 16GB RAM - it may cause system slowdown or crashes
+- **Low RAM Warning**: Do not run full optimization on machines with less than 8GB RAM - it may cause system slowdown or crashes
 
 
 
-### Option 1: Jupyter Notebook (Recommended)
+# DEMO Option 1: Jupyter Notebook (Recommended)
 
 **Original OpenAI Version:**
 ```bash
@@ -124,17 +102,17 @@ jupyter notebook evaluator-optimizer-in-dspy.ipynb
 
 **Advantage**: You can stop at any point if your system becomes slow. Run cells sequentially to see the step-by-step demonstration.
 
-### Option 2: Python Script (Ollama Local Version)
+# DEMO Option 2: Python Script (Ollama Local Version)
 
 ```bash
 python evaluator_optimizer_dspy.py
 ```
 
-**Warning**: This runs the full optimization pipeline which can be resource-intensive on low RAM systems.
+**Warning**: This runs the full optimization pipeline which can be resource-intensive on low RAM systems. it allows users to run optimization locally. 
 
 ## Demo Workflow
 
-1. **Environment Setup**: Configure DSPy with OpenAI or Ollama models
+1. **Environment Setup**: Configure DSPy with OpenAI models
 2. **Program Creation**: Build the comedian joke generator
 3. **Dataset Preparation**: Create examples of funny vs unfunny jokes
 4. **Judge Development**: Implement AI-based joke evaluation
@@ -145,8 +123,7 @@ python evaluator_optimizer_dspy.py
 
 ## Contact
 
-**Speaker**: Mike Taylor, Leonardo Ubbiali, Shashi Jagtap
-
+**Speaker**: Mike Taylor, Shashi Jagtap
 For questions about this demo or DSPy implementation details, please create an issue in this repository.
 
 ## License

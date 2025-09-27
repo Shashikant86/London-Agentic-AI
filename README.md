@@ -138,4 +138,4 @@ This repository contains various demos and projects with different licenses. Ple
 
 ---
 
-**Join us** in building the future of agentic AI! Whether you're a seasoned AI engineer or just starting your journey with AI agents, our community welcomes you.
+**Join us** on [meetup](https://www.meetup.com/london-agentic-ai/events/310601023) in building the future of agentic AI! Whether you're a seasoned AI engineer or just starting your journey with AI agents, our community welcomes you.

@@ -1,31 +1,27 @@
-# DSPy GEPA Demo - Local Ollama Experiment
+# DSPy GEPA Benchmarks - Local Ollama Performance
 
-**Local Version by**: Shashi Jagtap (Based on Mike Taylor's original notebook)
-
+**Benchmarks by**: Shashi Jagtap (Based on Mike Taylor's original DSPy GEPA demo)
 
 **Meetup**: London Agentic AI #1 Context Engineering: Building Reliable AI Agents: From Context to Evals
 
-## Note
-
-This is an **experimental local version** for advanced users who prefer offline operation. For the **recommended learning experience**, please use the original Jupyter notebook in the parent directory which uses OpenAI API and provides interactive step-by-step learning. This script tested locally with `llama3.1:8b, qwen3:8b, gpt-oss:20b, gpt-oss:120b` models.  
-
 ## Overview
 
-This directory contains a **Python script version** of Mike Taylor's DSPy GEPA demonstration, converted to run entirely on local Ollama models. This version demonstrates the evaluator-optimizer pattern using local inference without requiring API keys.
+This directory contains **complete benchmarking results** for DSPy GEPA optimizer running with local Ollama models. Includes the Python script, comprehensive performance data, and detailed analysis across multiple model configurations.
+
+**Test Hardware**: Apple M4 Max MacBook Pro, 128GB RAM  
 
 ## What's Inside 
 
-### 🔧 **Local Ollama Implementation**
-- `evaluator_optimizer_dspy.py` - **Local Python script** (converted by Shashi Jagtap)
-  - ✅ No API keys required (uses local Ollama models)
-  - ✅ Complete offline operation
-  - ✅ Works with various Ollama models
-  - ⚠️ Requires significant computational resources
-  - ⚠️ More complex setup than the original notebook
-
-### 📚 **Reference Materials**
-- `evaluator-optimizer-in-dspy.ipynb` - **Original notebook for reference**
+### 🏆 **Complete Benchmark Results**
+- `PERFORMANCE.md` - **Quick performance summary**
+- `BENCHMARKS.md` - **Detailed technical analysis** 
+- `evaluator_optimizer_dspy.py` - **Complete working script**
 - `requirements.txt` - Python dependencies
+
+### 📊 **Key Findings**
+- **Lightweight models** (llama3.2:1b + llama3.1:8b): +100% improvement, 6.5 min runtime
+- **Medium models** (llama3.1:8b + qwen3:8b): No optimization gain (plateau effect)
+- **High-performance models** (gpt-oss:20b + gpt-oss:120b): +160% improvement, best quality
 
 ## Prerequisites
 
@@ -113,7 +109,7 @@ Options:
 
 ```bash
 # Navigate to this directory
-cd local_gepa_experiment
+cd DSPy_GEPA_Benchmarks_Shashi
 
 # Quick start with default models (recommended for most users)
 python evaluator_optimizer_dspy.py
@@ -138,7 +134,7 @@ The script will run through these stages:
 This is approximate and varies based on the machine to machine 
 
 - **With lightweight models (1B-8B)**: Less than 10 minutes
-- **With medium models (8B-20B)**: Less than 0 minutes  
+- **With medium models (8B-20B)**: ~10+ minutes  
 - **With large models (20B+)**: More than 30 min 
 
 ## ⚠️ Important Warnings
@@ -176,11 +172,10 @@ This local version includes several optimizations for local execution:
 - ✅ You have sufficient hardware resources (16GB+ RAM)
 - ✅ You want to experiment with different models
 
-**Use the original notebook when:**
-- ✅ You want to learn DSPy concepts interactively
-- ✅ You prefer step-by-step explanations
-- ✅ You want faster execution and better results
-- ✅ You don't mind using OpenAI API (~$1-5 cost)
+**For learning DSPy concepts interactively:**
+- See Mike Taylor's original Jupyter notebook in the parent London Agentic AI repository
+- Interactive step-by-step explanations
+- Faster execution with OpenAI API
 
 ## Demo Workflow
 

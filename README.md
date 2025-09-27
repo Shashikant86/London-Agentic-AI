@@ -1,4 +1,4 @@
-# London Agentic AI Meetup : Source Code 
+# London Agentic AI: Demos
 
 Welcome to the official source code repository for the [London Agentic AI Meetup](https://www.meetup.com/london-agentic-ai/)! This repository hosts all the code, demos, and projects shared during our meetup sessions.
 
@@ -41,7 +41,7 @@ This is an example of the first meetup and more will be added later.
 
 ```
 London-Agentic-AI/
-├── 1_Context_Engineering/           # First meetup - Context Engineering
+├── 01_Context_Engineering/           # First meetup - Context Engineering
 │   ├── DSPy_GEPA_Mike/             # DSPy demo by Mike
 │   └── Semantic_Layer_Leo/         # Semantic layer demo by Leo
 ├── 2_[NextMeetupTopic]/            # Future meetup directories
@@ -91,15 +91,11 @@ We welcome contributions from our community members and external contributors! W
 
 Speakers can pre-upload the code as teaser (take feedback) or upload during the event or after the event. External contributors can help improving the code. 
 
-📝 **Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to contribute.**
-
-### Quick Overview
-
 - **Speakers**: Add your meetup demos and talks to the repository
 - **External Contributors**: Suggest improvements, fix bugs, or enhance documentation
 - **Community Members**: Help improve existing demos and share knowledge
 
-For detailed guidelines, submission process, and standards, check out our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+📝 **Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to contribute.**
 
 ## Community Guidelines
 
@@ -111,7 +107,7 @@ For detailed guidelines, submission process, and standards, check out our [CONTR
 ## Meetup Sessions
 
 ### 1. Context Engineering (First Meetup)
-**Focus**: Exploring context engineering techniques and frameworks
+**Focus**: Exploring context engineering techniques with DSPy Optimzation and Semantic layer.
 
 **Demos Included:**
 - **DSPy GEPA** by Mike Taylor - Evaluator and optimizer implementation in DSPy

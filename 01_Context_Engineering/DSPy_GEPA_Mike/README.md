@@ -1,21 +1,37 @@
 # DSPy GEPA Demo - Evaluator and Optimizer in DSPy
 
 **Speaker**: Mike Taylor, Leonardo Ubbiali
+
 **Meetup**: London Agentic AI #1 Context Engineering: Building Reliable AI Agents: From Context to Evals
-**Topic**: Evaluator-Optimizer Pattern in DSPy, Semantic Layer
+
+**Topic**: Evaluator-Optimizer Pattern in DSPy with GEPA Optimization, Semantic Layer
 
 ## Overview
 
 This demo teaches the **evaluator-optimizer pattern** in DSPy by building a joke-telling AI system that demonstrates how to create, evaluate, and optimize AI programs systematically. The example shows how to build a comedian AI that generates jokes in specific comedian styles and uses an AI judge to evaluate and improve joke quality through evolutionary optimization.
 
 
-## Whats inside 
+## What's Inside 
 
-This directory has the original notebook from the Mike as well as re-writen version for the developers who want to try the Python script directly. 
+This directory contains Mike's original notebook demonstration, which is the **🎯 RECOMMENDED** way to experience this demo. We also provide an optional local version for developers who prefer command-line execution.
 
-- `evaluator-optimizer-in-dspy.ipynb` - Original Jupyter notebook with full demonstration (From Mike Taylor)
-- `evaluator_optimizer_dspy.py` - Converted Python script by Shashi  (runnable version for developers locally)
-- `requirement.txt` - Project dependencies can be installed via pip or uv 
+### 🎯 **RECOMMENDED: Jupyter Notebook (Primary)**
+- `evaluator-optimizer-in-dspy.ipynb` - **⭐ Original Jupyter notebook with full demonstration** (From Mike Taylor)
+  - ✅ Interactive step-by-step learning experience
+  - ✅ Clear explanations and markdown documentation  
+  - ✅ Easy to pause, restart, and explore at your own pace
+  - ✅ **Best way to understand DSPy concepts**
+  - ✅ Works with OpenAI API (as intended by the speaker)
+
+### 🔧 **OPTIONAL: Python Script (Secondary)**  
+- `evaluator_optimizer_dspy.py` - Local Ollama version (converted by Shashi Jagtap)
+  - Command-line execution for experienced developers
+  - No API keys required (uses local Ollama models)
+  - **Alternative for users who prefer local inference**
+  - Requires more setup (Ollama installation + models)
+
+### 📦 **Dependencies**
+- `requirements.txt` - Project dependencies that can be installed via pip or uv 
 
 
 ## What You'll Learn
@@ -36,79 +52,133 @@ This directory has the original notebook from the Mike as well as re-writen vers
 - **Performance Evaluation**: Measuring and comparing system improvements
 
 
-### Environment Setup
+## Prerequisites
 
-#### Option 1: OpenAI (Original Notebook by Mike)
+### 🎯 **For Jupyter Notebook (RECOMMENDED)**
 
-Create a `.env` file in this directory with: KEEP `.env` file safe and do not commit this file
+1. **Jupyter Notebook**: Supported packages or IDE to run the notebook.
+  
 
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-```
+2. **Get OpenAI API Key**:
+   - Sign up at [OpenAI](https://platform.openai.com/)
+   - Create API key from your dashboard
+   - Create a `.env` file in this directory:
+   ```env
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+   **IMPORTANT**: Keep the `.env` file safe and do not commit this file to version control.
 
-#### Option 2: Ollama (Local, No API Key Required)
+3. **System Requirements**:
+   - Python 3.8+
+   - OpenAI API access (~$1-5 for full demo)
+   - Internet connection
 
-**🏠 Local Version Available**: The Python script uses **Ollama** for completely local inference - no API keys or internet required!
+### 🔧 **For Python Script (OPTIONAL - Advanced Users)**
 
-2. **Install Ollama & Pull required models**:
+Only follow this section if you want to run the local Ollama version instead of the recommended notebook.
 
-Install [Ollama](https://ollama.com) and get some models locally. This is an example but you need advanced model for optimization
+1. **Install Ollama**:
    ```bash
-   ollama pull llama3.2:1b        # Lightweight model
-   # or
-   ollama pull llama3.1:8b        # Standard model (needs more RAM)
+   # On macOS
+   brew install ollama
+   
+   # On Linux  
+   curl -fsSL https://ollama.ai/install.sh | sh
    ```
 
-Create virtualenv and install dependencies. 
+2. **Pull required models**:
+   ```bash
+   ollama pull llama3.1:8b        # Recommended for optimization
+   # OR for lower RAM systems:
+   ollama pull llama3.2:1b        # Lightweight but less capable
+   ```
 
-```bash
-pip install -r requirements.txt
-```
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-
-#### For OpenAI (Original & Recommended)
-- Python 3.8+
-- OpenAI API access
-- Internet connection for API calls
-
-
-#### For Ollama (Local for developers)
-- Python 3.8+
-- **RAM Requirements**:
-  - **Minimum**: 16GB RAM (basic functionality only)
-  - **Optimal**: 16GB+ RAM (for smooth GEPA optimization)
-- Local compute (no internet required for inference)
+4. **System Requirements**:
+   - Python 3.8+
+   - **16GB+ RAM recommended** (for GEPA optimization)
+   - Local compute (no internet required for inference)
 
 ## Running the Demo
 
-```bash
-# Run complete demo with full optimization
-python evaluator_optimizer_dspy.py  # Full GEPA optimization experience
+### 🎯 **RECOMMENDED: Jupyter Notebook (START HERE!)**
 
-```
-### ⚠️ **Performance Warnings**
-- **RAM Requirements**: Minimum 16GB RAM recommended
-- **Optimization Warning**: GEPA optimization is computationally intensive and may take significant time on slower machines
-- **Low RAM Warning**: Do not run full optimization on machines with less than 8GB RAM - it may cause system slowdown or crashes
+**This is the best way to learn DSPy concepts:**
 
-
-
-# DEMO Option 1: Jupyter Notebook (Recommended)
-
-**Original OpenAI Version:**
 ```bash
 jupyter notebook evaluator-optimizer-in-dspy.ipynb
 ```
 
-**Advantage**: You can stop at any point if your system becomes slow. Run cells sequentially to see the step-by-step demonstration.
+**Why the notebook is recommended:**
+- ✅ **Interactive learning**: Step-by-step with explanations
+- ✅ **Easy to pause/resume**: Stop at any cell, restart later  
+- ✅ **Visual outputs**: See results and plots inline
+- ✅ **Original experience**: Exactly as Mike presented it
+- ✅ **Cost effective**: Uses OpenAI API efficiently (~$1-5 total)
 
-# DEMO Option 2: Python Script (Ollama Local Version)
+**Getting started:**
+1. Open the notebook in Jupyter
+2. Run cells sequentially from top to bottom
+3. Read the markdown explanations between code cells
+4. Experiment with parameters if you want
+
+---
+
+### 🔧 **OPTIONAL: Python Script (Local Ollama)**
+
+**Only use this if you specifically need local inference and has resource to run optimization:**
 
 ```bash
 python evaluator_optimizer_dspy.py
 ```
 
-**Warning**: This runs the full optimization pipeline which can be resource-intensive on low RAM systems. it allows users to run optimization locally. 
+**⚠️ Important considerations for the Python script:**
+- Requires significant RAM (16GB+ recommended)
+- Takes longer to run than OpenAI version  
+- More complex setup (Ollama + models)
+- **Intended for advanced users only**
+- May cause system slowdown on lower-end machines
+
+**When to use the Python script:**
+- You cannot use OpenAI API
+- You need completely offline operation  
+- You're experienced with local LLM setup
+- You have sufficient hardware resources
+
+**🔧 Customizing Models for Better Results:**
+
+The script uses `llama3.2:1b` as student and `llama3.1:8b` as teacher by default, but you can modify it to use larger models for better optimization results:
+
+1. **Edit the Python script** (`evaluator_optimizer_dspy.py`) and change the model names in the `setup_environment()` function:
+
+```python
+# For better results, replace with larger models for teacher and/or student LM:
+student_lm = dspy.LM(
+    model="ollama_chat/qwen3:8b",     
+    # model="ollama_chat/llama3.1:8b",  # or llama3.1:70b
+    # model="ollama_chat/gpt-oss:20b",  # or gpt-oss:120b (if your machine supports)
+    api_key="",
+    max_tokens=4000,
+    temperature=1.0
+)
+```
+
+⚠️ **IMPORTANT WARNING: DSPy Optimization Intensity**
+
+DSPy optimizers (like GEPA) make **hundreds of LLM calls** during optimization. This is computationally intensive and can:
+- Consume significant system resources
+- Cause system slowdown or crashes on low-end machines
+- **Do NOT attempt this on low-end or resource-constrained systems**
+
+**Model Recommendations by System for Optimization:**
+- **16GB RAM**: less than 7b models 
+- **32GB RAM**: Over 8b
+- **64GB+ RAM**: over 20b 
+
 
 ## Demo Workflow
 
@@ -123,7 +193,7 @@ python evaluator_optimizer_dspy.py
 
 ## Contact
 
-**Speaker**: Mike Taylor, Shashi Jagtap
+Mike Taylor or Shashi Jagtap 
 For questions about this demo or DSPy implementation details, please create an issue in this repository.
 
 ## License

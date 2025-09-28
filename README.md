@@ -68,22 +68,6 @@ Different demos may require different environments. Check each meetup directory 
 - Jupyter Notebook/Lab (for notebook demos)
 - Various AI frameworks (DSPy, LangChain, LangGraph, etc.)
 
-### Running the Code
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/[your-username]/London-Agentic-AI.git
-   cd London-Agentic-AI
-   ```
-
-2. **Navigate to the specific meetup/demo:**
-   ```bash
-   cd 1_Context_Engineering/DSPy_GEPA_Mike/
-   ```
-
-3. **Follow the specific README or setup instructions** in each demo directory
-
-4. **Install dependencies** as specified in each demo's requirements
 
 ## Contributing
 
@@ -104,16 +88,6 @@ Speakers can pre-upload the code as teaser (take feedback) or upload during the 
 - **Constructive Feedback**: Provide helpful and constructive feedback on demos and projects
 - **Safety First**: Always prioritize safe and responsible AI development practices
 
-## Meetup Sessions
-
-### 1. Context Engineering (First Meetup)
-**Focus**: Exploring context engineering techniques with DSPy Optimzation and Semantic layer.
-
-**Demos Included:**
-- **DSPy GEPA** by Mike Taylor - Evaluator and optimizer implementation in DSPy
-- **Semantic Layer** by Leo - Building semantic layers for agentic systems
-
-*More sessions will be added as we continue our meetup journey!*
 
 ## Resources
 

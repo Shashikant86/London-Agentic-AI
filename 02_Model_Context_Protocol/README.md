@@ -1,24 +1,16 @@
-# 🤖 Context Engineering Meetup
+# 🤖 Agentic AI + MCP  Meetup
 
-Welcome to the London Agentic AI Context Engineering meetup materials! 🎯
+Agentic AI + MCP  Meetup meetup materials! 🎯
 
-Videos are now available for the meetup and we also have GitHub repo for the meetup source code to share for future meet-ups.
+Videos are now available for the meetup and we also have GitHub repo for future collaboration
 
 ## 📹 Videos
 
 📺 **YouTube Channel:** [London Agentic AI](https://www.youtube.com/@LondonAgenticAI)
 
-🎤 **Mike's Talk:** 🎥 Video [DSPy Evaluator & Optimizer](https://www.youtube.com/watch?v=gstt7E65FRM) | [📑 Slides](https://docs.google.com/presentation/d/1EOFake3bqiqCTl7I6fmNLXe0LIcbzDWxmkdMktQZBGQ)
+🎤 **Macey's Talk:** 🎥 Video [ Developing on the Bleeding Edge of MCP Servers](https://www.youtube.com/watch?v=8kDYWUSkFsg) 
 
-🎯 **Leo's Talk:** [Semantic Layer](https://www.youtube.com/watch?v=xBqf2gnRjXI)
+🎯 **Guillaume's Talk:** [Making MCP Servers Accessible (with vibes)](https://www.youtube.com/watch?v=Q7RL-x9-Ask)
 
-❓ **Q&A Session:** [Community Q&A](https://www.youtube.com/watch?v=Wl2-BvBc1I0)
 
-## 📂 What's Inside This Directory
-
-This directory contains all the materials from our Context Engineering meetup:
-
-- 📋 **Welcome.pdf** - Meetup introduction and agenda
-- 🔧 **DSPy_GEPA_Mike/** - Mike's implementation of DSPy evaluator & optimizer with notebook examples
-- 📊 **DSPy_GEPA_Benchmarks_Shashi/** - Shashi's benchmarking work with performance metrics and evaluation scripts
-- 🏗️ **Semantic_Layer_Leo/** - Leo's presentation materials on semantic layer architecture
+Code wll be uploaded for each talk if there is something public that can be shared with community 

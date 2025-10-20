@@ -1,0 +1,8 @@
+Tool discovery musings: https://ainativedev.io/news/teaching-mcp-servers-new-tricks
+Block’s guide to MCP design: https://engineering.block.xyz/blog/blocks-playbook-for-designing-mcp-servers
+Spec vs client support tracking:
+agentcompat.com
+https://modelcontextprotocol.io/clients
+https://github.com/apify/mcp-client-capabilities
+Botfooding: https://ainativedev.io/news/botfooding-can-an-llm-give-good-user-feedback
+MCPMark: https://mcpmark.ai/tasks/

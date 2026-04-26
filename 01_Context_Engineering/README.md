@@ -1,24 +1,46 @@
-# 🤖 Context Engineering Meetup
+# Building Reliable AI Agents: From Context to Evals
 
-Welcome to the London Agentic AI Context Engineering meetup materials! 🎯
+London Agentic AI Stop 01 established the community around reliable AI agents, context engineering, evals, prompt engineering and safe production adoption.
 
-Videos are now available for the meetup and we also have GitHub repo for the meetup source code to share for future meet-ups.
+## Event Links
 
-## 📹 Videos
+- Website event page: https://londonagenticai.com/events/building-reliable-ai-agents-context-evals
+- Meetup: https://www.meetup.com/london-agentic-ai/events/310601023/
+- Photos: https://www.meetup.com/london-agentic-ai/events/310601023/
+- Recording: https://www.youtube.com/watch?v=GtSaeQzL4o0
+- YouTube channel: https://www.youtube.com/@LondonAgenticAI
 
-📺 **YouTube Channel:** [London Agentic AI](https://www.youtube.com/@LondonAgenticAI)
+## Event Details
 
-🎤 **Mike's Talk:** 🎥 Video [DSPy Evaluator & Optimizer](https://www.youtube.com/watch?v=gstt7E65FRM) | [📑 Slides](https://docs.google.com/presentation/d/1EOFake3bqiqCTl7I6fmNLXe0LIcbzDWxmkdMktQZBGQ)
+- Date: 25 September 2025
+- Venue: AutogenAI, London
+- Status: Past
+- Theme: Reliable AI agents, context engineering, evals, LLM-as-judge, semantic layers and prompt engineering
+- Agent Lines: Prompt Engineering, Context Engineering, Eval Engineering, Safe Adoption
+- Sponsor / host: AutogenAI + authors of the Prompt Engineering book
 
-🎯 **Leo's Talk:** [Semantic Layer](https://www.youtube.com/watch?v=xBqf2gnRjXI)
+## Sessions
 
-❓ **Q&A Session:** [Community Q&A](https://www.youtube.com/watch?v=Wl2-BvBc1I0)
+| Session | Speaker / contributor | Materials |
+| --- | --- | --- |
+| DSPy Evaluator and Optimizer | Mike | [DSPy_GEPA_Mike](DSPy_GEPA_Mike/) |
+| DSPy GEPA benchmarks | Shashi Jagtap | [DSPy_GEPA_Benchmarks_Shashi](DSPy_GEPA_Benchmarks_Shashi/) |
+| Semantic Layer | Leo | [Semantic_Layer_Leo](Semantic_Layer_Leo/) |
 
-## 📂 What's Inside This Directory
+## Materials
 
-This directory contains all the materials from our Context Engineering meetup:
+- [Welcome deck](Welcome.pdf)
+- [DSPy GEPA demo by Mike](DSPy_GEPA_Mike/)
+- [DSPy GEPA benchmarks by Shashi](DSPy_GEPA_Benchmarks_Shashi/)
+- [Semantic Layer material by Leo](Semantic_Layer_Leo/)
 
-- 📋 **Welcome.pdf** - Meetup introduction and agenda
-- 🔧 **DSPy_GEPA_Mike/** - Mike's implementation of DSPy evaluator & optimizer with notebook examples
-- 📊 **DSPy_GEPA_Benchmarks_Shashi/** - Shashi's benchmarking work with performance metrics and evaluation scripts
-- 🏗️ **Semantic_Layer_Leo/** - Leo's presentation materials on semantic layer architecture
+## Videos
+
+- Mike's talk: https://www.youtube.com/watch?v=gstt7E65FRM
+- Leo's talk: https://www.youtube.com/watch?v=xBqf2gnRjXI
+- Community Q&A: https://www.youtube.com/watch?v=Wl2-BvBc1I0
+- Event recording playlist / archive: https://www.youtube.com/watch?v=GtSaeQzL4o0
+
+## Contribution Notes
+
+If you contributed to this event, add your public material in a dedicated subfolder and include setup instructions where applicable.

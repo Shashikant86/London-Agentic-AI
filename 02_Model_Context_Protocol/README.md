@@ -1,16 +1,43 @@
-# 🤖 Agentic AI + MCP  Meetup
+# Agentic AI and Model Context Protocol (MCP)
 
-Agentic AI + MCP  Meetup meetup materials! 🎯
+London Agentic AI Stop 02 focused on Model Context Protocol, MCP servers, tool access, enterprise controls and AI-native development workflows.
 
-Videos are now available for the meetup and we also have GitHub repo for future collaboration
+## Event Links
 
-## 📹 Videos
+- Website event page: https://londonagenticai.com/events/agentic-ai-model-context-protocol-mcp
+- Meetup: https://www.meetup.com/london-agentic-ai/events/310615112/
+- Photos: https://www.meetup.com/london-agentic-ai/events/310615112/
+- Recording: https://www.youtube.com/watch?v=GtSaeQzL4o0
+- YouTube channel: https://www.youtube.com/@LondonAgenticAI
 
-📺 **YouTube Channel:** [London Agentic AI](https://www.youtube.com/@LondonAgenticAI)
+## Event Details
 
-🎤 **Macey's Talk:** 🎥 Video [ Developing on the Bleeding Edge of MCP Servers](https://www.youtube.com/watch?v=8kDYWUSkFsg) 
+- Date: 16 October 2025
+- Venue: Tessl, London
+- Status: Past
+- Theme: Model Context Protocol, MCP servers, tool access, agent governance and AI-native development
+- Agent Lines: Protocol Line, Context Line, Skills & Tools, Guardrails, AgentOps
+- Sponsor / host organisations: Tessl, StackOne
 
-🎯 **Guillaume's Talk:** [Making MCP Servers Accessible (with vibes)](https://www.youtube.com/watch?v=Q7RL-x9-Ask)
+## Sessions
 
+| Session | Speaker / contributor | Materials |
+| --- | --- | --- |
+| Developing on the Bleeding Edge of MCP Servers | Macey | [Macey](Macey/) |
+| Making MCP Servers Accessible | Guillaume | [Guillaume](Guillaume/) |
 
-Code wll be uploaded for each talk if there is something public that can be shared with community 
+## Materials
+
+- [Welcome deck](Welcome.pdf)
+- [Macey resources and slides](Macey/)
+- [Guillaume resources](Guillaume/)
+
+## Videos
+
+- Macey's talk: https://www.youtube.com/watch?v=8kDYWUSkFsg
+- Guillaume's talk: https://www.youtube.com/watch?v=Q7RL-x9-Ask
+- Event recording archive: https://www.youtube.com/watch?v=GtSaeQzL4o0
+
+## Contribution Notes
+
+If you contributed to this event, add your public material in a dedicated subfolder and include setup instructions where applicable.

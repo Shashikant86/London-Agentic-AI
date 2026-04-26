@@ -1,111 +1,63 @@
-# London Agentic AI: Demos
+# London Agentic AI Materials
 
-Welcome to the official source code repository for the [London Agentic AI Meetup](https://www.meetup.com/london-agentic-ai/)! This repository hosts all the code, demos, and projects shared during our meetup sessions.
+Official technical materials archive for [London Agentic AI](https://londonagenticai.com), the UK's original, high-signal Agentic AI community in London.
 
-## About London Agentic AI
+London Agentic AI was formed on 25 April 2025 as an independent, highly technical event series for agent builders, by agent builders. The community covers Agentic AI Engineering end to end: prompts, context, harnesses, evals, memory, tools, guardrails, inference, protocols, AgentOps, coding agents, orchestration, observability, optimization and safe AI agent adoption.
 
-London Agentic AI is a vibrant community dedicated to exploring, learning, and brainstorming ideas to build safe, reliable, and production-grade AI agents with the community in London and beyond. Founded in April 2025, our meetup brings together AI engineers, agent builders, ML researchers, and data scientists who are passionate about autonomous systems and cutting-edge AI technologies. Our goal is knowledge sharing and learning as a community. 
+## Official Links
 
-### Our Mission
+- Website: https://londonagenticai.com
+- Luma calendar: https://luma.com/londonagenticai
+- Meetup archive: https://www.meetup.com/london-agentic-ai/
+- YouTube: https://www.youtube.com/@LondonAgenticAI
+- Event pages: https://londonagenticai.com/events
+- Agent Lines: https://londonagenticai.com/agent-lines
 
-**"To explore, learn, and share best practices of Agentic AI"**
+## Event Materials
 
-We focus on practical, builder-oriented discussions and hands-on exploration of agent technologies, maintaining a zero-pitch policy to ensure pure knowledge exchange within our inclusive community.
-
-## Focus Areas
-
-Our meetups cover a wide range of topics in the agentic AI space:
-
-- **Multi-Agent Systems**: Building and orchestrating multiple AI agents
-- **Agent Orchestration**: Frameworks and patterns for agent coordination
-- **Agentic Tools & Protocols**: Advanced protocols like MCP, A2A and techniques like Agentic RAG, prompt optimizations that foster agent development
-- **Agent Frameworks**: Frameworks and methodologies for building AI agents
-- **Agent Deployment**: Best practices for deploying agents in real-world scenarios
-- **Agent Optimization**: Best practices for evaluating and optimizing AI agents 
-
-## What You'll Find Here
-
-This repository is organized by meetup sessions, with each directory containing:
-
-- **Live coding demos** from our sessions
-- **Agent Clinics**: Bring your agents to collaborate, fix, and share with others
-- **Talk presentations** with accompanying code and video links
-- **Community projects** and contributions
-- **Framework explorations** (LangGraph, DSPy, CrewAI, etc.)
-
-🎥 **Video recordings** of talks will be available on our [YouTube channel](https://www.youtube.com/@LondonAgenticAI) and linked from each demo folder.
+| Stop | Date | Event | Venue | Materials | Event page | Recording |
+| --- | --- | --- | --- | --- | --- | --- |
+| 06 | 14 May 2026 | The London AI Agents Showcase at Databricks | Databricks London HQ | [Materials](06_London_AI_Agents_Showcase_Databricks/) | [Website](https://londonagenticai.com/events/london-ai-agents-showcase-databricks) | Coming after event |
+| 05 | 11 Mar 2026 | Coding Agents and ACP with JetBrains | Tessl | [Materials](05_Coding_Agents_ACP_JetBrains_Zed/) | [Website](https://londonagenticai.com/events/coding-agents-acp-jetbrains-zed) | [YouTube](https://www.youtube.com/watch?v=Tr6hMit_e1A) |
+| 04 | 05 Feb 2026 | Agentic Coding at Google DeepMind | Google Campus London | [Materials](04_Agentic_Coding_Google_DeepMind/) | [Website](https://londonagenticai.com/events/agentic-coding-google-deepmind) | [YouTube](https://www.youtube.com/watch?v=-fEq34tkPCI) |
+| 03 | 18 Nov 2025 | Agentic AI + Evals at Databricks | Databricks London HQ | [Materials](03_Agentic_AI_Evals_Databricks/) | [Website](https://londonagenticai.com/events/agentic-ai-evals-databricks) | [YouTube](https://www.youtube.com/watch?v=BLINPRC3AS8) |
+| 02 | 16 Oct 2025 | Agentic AI and Model Context Protocol | Tessl | [Materials](02_Model_Context_Protocol/) | [Website](https://londonagenticai.com/events/agentic-ai-model-context-protocol-mcp) | [YouTube](https://www.youtube.com/watch?v=GtSaeQzL4o0) |
+| 01 | 25 Sep 2025 | Building Reliable AI Agents: From Context to Evals | AutogenAI | [Materials](01_Context_Engineering/) | [Website](https://londonagenticai.com/events/building-reliable-ai-agents-context-evals) | [YouTube](https://www.youtube.com/watch?v=GtSaeQzL4o0) |
 
 ## Repository Structure
 
-This is an example of the first meetup and more will be added later. 
-
+```text
+LondonAgenticAI/
+├── 01_Context_Engineering/
+├── 02_Model_Context_Protocol/
+├── 03_Agentic_AI_Evals_Databricks/
+├── 04_Agentic_Coding_Google_DeepMind/
+├── 05_Coding_Agents_ACP_JetBrains_Zed/
+├── 06_London_AI_Agents_Showcase_Databricks/
+├── templates/
+└── README.md
 ```
-London-Agentic-AI/
-├── 01_Context_Engineering/           # First meetup - Context Engineering
-│   ├── DSPy_GEPA_Mike/             # DSPy demo by Mike
-│   └── Semantic_Layer_Leo/         # Semantic layer demo by Leo
-├── 2_[NextMeetupTopic]/            # Future meetup directories
-├── shared_resources/               # Common utilities and resources
-└── README.md                       # This file
-```
 
-### Meetup Directory Structure
+Each event folder may contain slides, notebooks, code, resources, links and speaker-provided assets. Some events only have public video or resource links if the underlying code cannot be shared.
 
-Each meetup directory follows this pattern:
-- `[Number]_[Theme]/` - Main meetup folder
-  - `[Speaker_Name_Topic]/` - Individual talk/demo folders
-  - `README.md` - Meetup-specific information and agenda
-  - `requirements.txt` or `package.json` - Dependencies (when applicable)
+## How To Contribute
 
-## Getting Started
+Speakers can add public materials before or after an event. Keep each contribution inside the relevant event folder and include a short README when adding code, notebooks or resources.
 
-### Prerequisites
+Recommended contribution pattern:
 
-Different demos may require different environments. Check each meetup directory for specific requirements. Common dependencies include:
+1. Create a folder under the relevant event, for example `Speaker_Name_Topic/`.
+2. Add code, notebooks, slides or resource links.
+3. Include setup instructions if the material is runnable.
+4. Avoid committing secrets, API keys, private datasets or proprietary customer data.
+5. Open a pull request with a clear description of the material.
 
-- Python 3.8+ (for Python-based demos)
-- Node.js 16+ (for JavaScript/TypeScript demos)
-- Jupyter Notebook/Lab (for notebook demos)
-- Various AI frameworks (DSPy, LangChain, LangGraph, etc.)
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more detail.
 
+## Community Standards
 
-## Contributing
-
-We welcome contributions from our community members and external contributors! Whether you're a speaker wanting to share your demo or someone looking to improve existing code, we'd love your contributions.
-
-Speakers can pre-upload the code as teaser (take feedback) or upload during the event or after the event. External contributors can help improving the code. 
-
-- **Speakers**: Add your meetup demos and talks to the repository
-- **External Contributors**: Suggest improvements, fix bugs, or enhance documentation
-- **Community Members**: Help improve existing demos and share knowledge
-
-📝 **Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions on how to contribute.**
-
-## Community Guidelines
-
-- **Be Respectful**: Foster an inclusive environment for all community members
-- **Knowledge Sharing**: Focus on learning and sharing, not pitching products
-- **Constructive Feedback**: Provide helpful and constructive feedback on demos and projects
-- **Safety First**: Always prioritize safe and responsible AI development practices
-
-
-## Resources
-
-- **Meetup Page**: [London Agentic AI on Meetup](https://www.meetup.com/london-agentic-ai/)
-- **YouTube Channel**: [London Agentic AI on YouTube](https://www.youtube.com/@LondonAgenticAI) - Talk recordings and demos (videos coming soon!)
-- **Community Discord**: [Coming Soon](link-to-discord)
-
-
-## Contact
-
-- **Organizers**: Reach out to Shashi Jagtap through our Meetup page or GitHub
-- **Issues**: Use GitHub issues for repository-related questions
-- **General Questions**: Join our community discussions on Discord
+London Agentic AI is a technical community for serious builders. Materials should support learning, implementation and safe adoption of AI agents. Avoid spam, vendor-only material and private or sensitive data.
 
 ## License
 
-This repository contains various demos and projects with different licenses. Please check individual directories for specific licensing information. When no license is specified, the code is shared for educational purposes within our community.
-
----
-
-**Join us** on [meetup](https://www.meetup.com/london-agentic-ai/events/310601023) in building the future of agentic AI! Whether you're a seasoned AI engineer or just starting your journey with AI agents, our community welcomes you.
+Materials may have different licenses depending on the speaker or contributing organisation. Check each folder for license notes. If no license is provided, materials are shared for educational reference within the London Agentic AI community.
